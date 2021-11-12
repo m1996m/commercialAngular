@@ -6,6 +6,7 @@ import { CentreComponent } from './centre.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FooterComponent } from '../footer/footer.component';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     CentreRoutingModule
   ]
 })
