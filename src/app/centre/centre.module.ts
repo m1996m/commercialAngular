@@ -6,7 +6,7 @@ import { CentreComponent } from './centre.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { FooterComponent } from '../footer/footer.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
-    CentreRoutingModule
+    CentreRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class CentreModule { }

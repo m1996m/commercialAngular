@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +17,7 @@ import { TypeProduitService } from './services/type-produit.service';
 import { TypeRayonService } from './services/type-rayon.service';
 import { UserService } from './services/user.service';
 import { VenteService } from './services/vente.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,8 +27,9 @@ import { VenteService } from './services/vente.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     CentreService,

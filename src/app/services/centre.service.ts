@@ -1,11 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CentreModel } from '../Models/centre-model.Model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CentreService {
-  global = 'http://127.0.0.1:8000/getOneCentre/1';
+  global = 'http://127.0.0.1:8000/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -14,9 +15,20 @@ export class CentreService {
     })
   };
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient ) { }
 
-  getAllCentre(){
-    return this.http.get(this.global);
-  } 
+  getAllCentre() {
+    return this.http.get(this.global , this.httpOptions);
+  }
+  createCentre(centre:CentreModel) {
+    return this.http.post(this.global+'centre/new',centre, this.httpOptions);
+  }
+
+  verificationUniciteEmail(email:CentreModel) {
+    return this.http.get(this.global+'verificationUniciteEmail', this.httpOptions);
+  }
+
+  verificationUniciteTEl(tel:CentreModel) {
+    return this.http.get(this.global+'verificationUniciteTelCentre', this.httpOptions);
+  }
 }
